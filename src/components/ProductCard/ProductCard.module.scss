@@ -1,0 +1,62 @@
+@use '../../styles/global.scss' as *;
+
+
+.productCard {
+    width: 250px;
+    background-color: var(--main-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    // border: 1px solid #ccc;
+
+}
+
+.prdImg {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+}
+
+.cardSale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color-yellow);
+    padding: 4px 8px ;
+    margin: 8px;
+    border-radius: 4px;
+}
+
+.cardBody {
+    padding: 15px;
+}
+
+.cardTitle {
+    padding-top:8px;
+    display: flex; 
+    gap:6px;
+    justify-content: start;
+    flex-direction: row;
+    padding: 8px 0;
+}
+
+
+.cardBtn {
+    padding: 6px;
+}
+
+.cardFooter {
+    padding-top:8px;
+}
+.oldPrice {
+    color: #ccc;
+    text-decoration: line-through;
+    margin-right: 5px;
+}
+
+.newPrice {
+    font-weight: 700;
+    color: var(--main-color-red)
+}

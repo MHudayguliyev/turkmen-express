@@ -1,0 +1,48 @@
+ @use '../../styles/global.scss' as *;
+
+
+.sideBar {
+    width: 230px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--main-bg);   
+}
+
+.title {
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+}
+
+.titleName {
+    padding: 0;
+}
+
+.items {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+
+.itemDiv {
+    &:hover {
+        background-color: #defcec;
+        color: var(--second-color-green);
+        border-left: 5px solid var(--second-color-green)
+    }
+    
+    .item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 2px;
+    }
+
+}
+
+.bx {
+    font-size: 16px;
+}

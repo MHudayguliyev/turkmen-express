@@ -1,0 +1,28 @@
+@use '../../styles/global.scss' as *;
+.brandCard {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    height: auto;
+    max-width: 170px;
+    cursor: pointer;
+    padding: 14px;
+    min-height: 150px;
+    // border: 1px solid #ccc;
+
+}
+
+.brandLine {
+    border-top: 1px solid #f1f1f1;
+}
+
+.brandImg {
+    position: relative;
+    img {
+        width: 100%;
+    }
+}
+.brandName {
+    text-align: center;
+    padding-top: 15px;
+}
