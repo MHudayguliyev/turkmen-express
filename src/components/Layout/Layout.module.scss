@@ -1,0 +1,15 @@
+.layout {
+    width: 100%;
+    height: 100vh;
+    // margin: 100px auto;
+}
+
+.layoutContent {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+    padding: 30px;
+    border:  1px solid red;
+}
