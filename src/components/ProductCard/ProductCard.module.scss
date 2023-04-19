@@ -7,8 +7,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
-    // border: 1px solid #ccc;
-
+    height: 70vh
 }
 
 .prdImg {
@@ -31,6 +30,10 @@
 
 .cardBody {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30vh;
 }
 
 .cardTitle {

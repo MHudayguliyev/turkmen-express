@@ -1,8 +1,12 @@
 import React, { CSSProperties, ReactNode, forwardRef } from 'react';
 import styles from './Grid.module.scss';
 import classNames from 'classnames/bind';
+<<<<<<< HEAD
 import { toRem } from '../../utils/helpers';
 
+=======
+import { toRem } from '../../utils/helpers'
+>>>>>>> 59dac634a02bf1c9ae74785e124ae1153bbb1df2
 
 const cx = classNames.bind(styles);
 

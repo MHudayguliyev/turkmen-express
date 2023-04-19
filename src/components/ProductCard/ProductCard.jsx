@@ -5,25 +5,29 @@ import star from '../../assets/images/star.png'
 import {FcRating} from 'react-icons/fc'
 
 
-const ProductCard = () => {
+const ProductCard = (props) => {
+  const {data} = props
+
   return (
     <div className={styles.productCard}>
       <div className={styles.prdImg}>
-          <img src={img} alt="" />
+          <img src={data.main_image} alt="" />
           <div className={styles.cardSale}>Sale</div>
       </div>
       <div className={styles.cardBody}>
-        <h4>Lorem ipsum dolor sit amet consectetu.</h4>
-        <div class={styles.cardTitle}>
-          <img src={star} alt="" width={14} height={14}/>
-          <img src={star} alt="" width={14} height={14}/>
-          <img src={star} alt="" width={14} height={14}/>
-          <img src={star} alt="" width={14} height={14}/>
-        </div>
-          <div class={styles.cardFooter}>
-            <span className={styles.oldPrice}>$1231.23</span>
-            <span class={styles.newPrice}>$19.99</span>
+        <h4>{data.name_ru}</h4>
+        <div className={styles.cardDetail}>
+          <div className={styles.cardTitle}>
+            <img src={star} alt="" width={14} height={14}/>
+            <img src={star} alt="" width={14} height={14}/>
+            <img src={star} alt="" width={14} height={14}/>
+            <img src={star} alt="" width={14} height={14}/>
           </div>
+          <div className={styles.cardFooter}>
+            <span className={styles.oldPrice}>$1231.23</span>
+            <span className={styles.newPrice}>{data.price.toFixed(2)}</span>
+          </div>
+        </div>
       </div>
     </div>
   )
