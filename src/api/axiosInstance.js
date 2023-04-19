@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-    baseURL: '{{base_url}}/api/'
+    baseURL: 'https://turkmenexpress.com.tm/api/'
 })
 
 export default axiosInstance
