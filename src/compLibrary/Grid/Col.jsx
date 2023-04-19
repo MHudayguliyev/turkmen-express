@@ -1,7 +1,8 @@
 import React, { CSSProperties, ReactNode, forwardRef } from 'react';
 import styles from './Grid.module.scss';
 import classNames from 'classnames/bind';
-// import { toRem } from '@utils/helpers';
+import { toRem } from '../../utils/helpers';
+
 
 const cx = classNames.bind(styles);
 
@@ -84,7 +85,7 @@ const Col = forwardRef((props, ref)=> {
 		})
 			}`} style={{
 				...style,
-				paddingLeft: toRem(rowgutter ),
+				paddingLeft: toRem(rowgutter),
 				paddingRight: toRem(rowgutter ),
 				paddingTop: toRem(colgutter ),
 				paddingBottom: toRem(colgutter ),
