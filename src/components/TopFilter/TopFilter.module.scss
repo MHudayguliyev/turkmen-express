@@ -1,0 +1,39 @@
+@use '../../styles/global.scss';
+
+
+.topFilter {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: var(--second-bg-light); 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.view {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.dropwdown,
+.textContent {
+    border: 1px solid #ccc;
+    color: rgb(110, 109, 109);
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.dropwDownTxt  {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}

@@ -1,9 +1,10 @@
 @use '../../styles/global.scss' as *;
+@import '../../assets/config/mixins';
+
 .categoryCard {
-    width: 250px;
+    // width: 250px;
     padding: 20px;
     background-color: var(--main-bg);
-    // border: 0.5px solid #ccc;
     box-shadow: var(--box-shadow);
     border-radius: 8px;
 
@@ -19,6 +20,7 @@
 
 h4 {
     padding: 10px 0 0 6px;
+    @include text-ellipsis(14, 1, 1);
 }
 
 .ctgs {

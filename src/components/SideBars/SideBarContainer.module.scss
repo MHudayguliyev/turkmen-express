@@ -1,0 +1,69 @@
+ @use '../../styles/global.scss' as *;
+
+
+.sideBarContainer {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--main-bg);  
+    padding: 15px; 
+}
+
+.sideBarName {
+    background-color: var(--second-bg-light);
+    padding: 18px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;;
+}
+// .title {
+//     font-size: 18px;
+//     border-bottom: 1px solid #ccc;
+//     padding: 15px;
+// }
+
+// .titleName {
+//     padding: 0;
+// }
+
+// .items {
+//     border-bottom: 1px solid #ccc;
+//     padding: 15px 0;
+// }
+
+// .itemDiv {
+//     &:hover {
+//         background-color: #defcec;
+//         color: var(--second-color-green);
+//         border-left: 5px solid var(--second-color-green)
+//     }
+    
+//     .item {
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         gap: 10px;
+//         padding: 10px 12px;
+//         font-size: 16px;
+//         cursor: pointer;
+//         margin-top: 2px;
+//         position: relative;
+
+//         .chevron {
+//             position: absolute;
+//             top: 50;
+//             right: 0;
+//         }
+
+//         .leftIcon {
+//             font-size: 20px;
+//             margin: 0;
+//         }
+//     }
+
+// }
+
+// .bx {
+//     font-size: 16px;
+// }

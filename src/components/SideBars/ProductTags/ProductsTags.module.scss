@@ -1,0 +1,14 @@
+@use '../../../styles/global.scss' as *;
+
+.productTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: var(--second-bg-light);
+    padding: 10px;
+    color: rgb(110, 109, 109);
+    font-weight: 500;
+}

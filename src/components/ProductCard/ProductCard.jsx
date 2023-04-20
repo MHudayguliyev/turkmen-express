@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './ProductCard.module.scss'
 import img from '../../assets/images/test.jpg'
 import star from '../../assets/images/star.png'
-import {FcRating} from 'react-icons/fc'
 
 
 const ProductCard = (props) => {
@@ -11,7 +10,7 @@ const ProductCard = (props) => {
   return (
     <div className={styles.productCard}>
       <div className={styles.prdImg}>
-          <img src={data.main_image} alt="" />
+          <img src={data.main_image ? data.main_image : data.image} alt="" className={styles.img} />
           <div className={styles.cardSale}>Sale</div>
       </div>
       <div className={styles.cardBody}>
@@ -24,8 +23,8 @@ const ProductCard = (props) => {
             <img src={star} alt="" width={14} height={14}/>
           </div>
           <div className={styles.cardFooter}>
-            <span className={styles.oldPrice}>$1231.23</span>
-            <span className={styles.newPrice}>{data.price.toFixed(2)}</span>
+            <span className={styles.oldPrice}>$987.23</span>
+            <span className={styles.newPrice}>$890.00</span>
           </div>
         </div>
       </div>

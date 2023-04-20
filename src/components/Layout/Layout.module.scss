@@ -5,16 +5,20 @@
 }
 
 .layoutContent {
-    width: 80vw;
+    width: 100vw;
     margin: auto;
     display: flex;
     gap: 20px;
     justify-content: space-between;
     padding: 30px;
-    border:  1px solid red;
 }
 
 .childrenContent {
-    border: 1px solid red;
     width: 80vw;
+}
+
+.sideBarContent {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
 }

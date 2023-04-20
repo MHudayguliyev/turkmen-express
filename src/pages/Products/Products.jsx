@@ -31,23 +31,23 @@ const Products = () => {
 
 
   return (
-    <>
-        <div className={``}>Here goes the breadcrumb</div>
-        <h1>Product name</h1>
+    <div className={styles.container}>
         {
             isLoading ? <span className={styles.loading}><Preloader /></span> : 
             isError ? <span className={styles.noData}>No data</span> : 
-            <Row colGutter={4} rowGutter={4}>
+            <Row colGutter={10} rowGutter={10}>
                 {
                     productList && productList?.map((item, index) => (
-                        <Col key={index}>
-                            <ProductCard data={item}/>
+                        <Col key={index} grid={{ xxlg: 3, xlg: 4, lg: 6, span: 6, sm: 12 }} >
+                            <div className={styles.products}>
+                                <ProductCard data={item}/>
+                            </div>
                         </Col>
                     ))
                 }
             </Row>
         }
-    </>
+    </div>
   )
 }
 

@@ -2,14 +2,16 @@ import React from 'react'
 import styles from './CategoryCard.module.scss'
 import cardImg from '../../assets/images/categoryCrd.png'
 
-const CategoryCard = () => {
+const CategoryCard = (props) => {
+  const {data} = props
+  console.log('component cat', data)
   return (
     <div className={styles.categoryCard}>
         <div className={styles.cardImg}>
-            <img src={cardImg} alt="" />
+            <img src={data.image} alt="" />
         </div>
         <div className={styles.cardBody}>
-            <h4>Laptop&Computer</h4>
+            <h4>{data.name_en}</h4>
             <ul className={styles.ctgs}>
                 <li> <i className='bx bx-chevron-right'></i> Components</li>
                 <li> <i className='bx bx-chevron-right'></i> Printer</li>

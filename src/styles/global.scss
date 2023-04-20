@@ -2,6 +2,7 @@
 @use "./globalFunctions.scss" as *;
 @use "./globalTypography.scss" as typography;
 @use "./fonts.scss";
+@use '../../node_modules/multi-range-slider-react/lib/multirangeslider.css' as *;
 
 
 :root {
@@ -348,4 +349,21 @@ $breakpoints: (
 
 .rbc-btn-group button:first-child {
    height: 1.9rem
+}
+
+
+
+.multi-range-slider {
+   border: none;
+   box-shadow: none;
+   padding: 10px;
+
+   .bar-inner {
+      background-color: rgb(255, 255, 0)
+   }
+
+   .labels {
+      margin-bottom: 3px;
+      padding: 10px 0;
+   }
 }

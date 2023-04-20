@@ -5,12 +5,16 @@ import Brands from "../pages/Brands/Brands.jsx";
 import Categories from "../pages/Categories/Categories.jsx";
 import Products from "../pages/Products/Products.jsx";
 import { Layout } from './Layout/Layout';
+import CategoriesSideBar from "./SideBars/CategoriesSideBar/CategoriesSideBar.jsx";
+import ProductsTags from "./SideBars/ProductTags/ProductsTags.jsx";
+import FilterPrice from "./SideBars/FilterPrice/FilterPrice.jsx";
+import FilterBy from "./SideBars/FilterBy/FilterBy.jsx";
 
 const routes = [
     {
        path: 'brands',
        element: (
-          <Layout>
+          <Layout sidebars={[]}>
             <Brands />
           </Layout>
        )
@@ -18,7 +22,15 @@ const routes = [
     {
       path: 'categories',
       element: (
-          <Layout>
+          <Layout sidebars={[
+            {component: <CategoriesSideBar />}, 
+            {component: <ProductsTags />}, 
+            {component: <FilterPrice />},
+            {component: <FilterBy filterBy='color'/>},
+            {component: <FilterBy filterBy='brand'/>},
+            {component: <FilterBy filterBy='size'/>}
+          ]}
+          >
             <Categories />
           </Layout>
       )
@@ -29,7 +41,14 @@ const routes = [
       {
         path: '/',
         element: (
-          <Layout>
+          <Layout sidebars={[
+            {component: <CategoriesSideBar />}, 
+            {component: <ProductsTags />}, 
+            {component: <FilterPrice />},
+            {component: <FilterBy filterBy='color'/>},
+            {component: <FilterBy filterBy='brand'/>},
+            {component: <FilterBy filterBy='size'/>}
+          ]}>
             <Products />
           </Layout>
         )

@@ -1,12 +1,12 @@
 import React from 'react'
-import { SideBar } from './../SideBar/SideBar';
 import { useQuery } from 'react-query';
 
 // styles
 import styles from './Layout.module.scss'
 import { GetCategories } from '../../api/queries/Getters';
+import TopFilter from '../TopFilter/TopFilter';
 
-export const Layout = ({children}) => {
+export const Layout = ({sidebars, children}) => {
   const {
     data, 
     isLoading, 
@@ -19,10 +19,19 @@ export const Layout = ({children}) => {
   return (
     <div className={styles.layout}>
         <div className={styles.layoutContent}>
-            <div className={styles.sideBarContent}>
-                <SideBar data={data}/>
-            </div>
+          <div className={styles.sideBarContent}>
+            {
+              sidebars?.map((sidebar, index) => {
+                return (
+                  <div className={styles.sideBarItems}  key={index}>
+                    {sidebar.component}
+                  </div>
+                )
+              })
+            }
+          </div>
             <div className={styles.childrenContent}>
+              <TopFilter />
                 {children}
             </div>
         </div>

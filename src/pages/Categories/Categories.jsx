@@ -1,20 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import styles from './Categories.module.scss'
 import Row from '../../compLibrary/Grid/Row'
 import Col from '../../compLibrary/Grid/Col'
 import { BrandCard } from '../../components/BrandCard/BrandCard'
-import CategoryCard from '../../components/CategoryCard/CategoryCard'
 import ProductCard from '../../components/ProductCard/ProductCard'
-import { SideBar } from '../../components/SideBar/SideBar'
 import { useQuery } from 'react-query'
-import { GetProducts } from './../../api/queries/Getters';
+import { GetCategories } from './../../api/queries/Getters';
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs'
+import Preloader from '../../compLibrary/Preloader/Preloader.jsx'
+import CategoryCard from '../../components/CategoryCard/CategoryCard'
 
 
 const Categories = () => {
- const  {
-  data
- } = useQuery('GetProducts', GetProducts())
- 
+  const [categoriesList, setCategoriesList] = useState([])
+  const {
+      data: categoriesData, 
+      isLoading, 
+      isError
+  } = useQuery('getCategories', () => GetCategories(), {
+      refetchOnWindowFocus: false
+  })
+
+  useEffect(() => {
+      if(!isLoading || !isError) {
+          setCategoriesList(categoriesData?.results)
+      }
+  }, [categoriesData])
+
+  console.log('list cat', categoriesList)
 
  const crumbs = [
    {
@@ -28,26 +41,24 @@ const Categories = () => {
      slug: '/brands'
    }
  ]
- console.log(data)
+ console.log(categoriesData)
   return (
-    <div className='container'>
-      <h1> Categories</h1>
-      <BreadCrumbs crumbs={crumbs}/>
-      <Row rowGutter={5} colGutter={5} style={{width: '100%'}}>
-        <Col>
-          <CategoryCard />
-        </Col>
-        <Col>
-          <CategoryCard />
-        </Col>
-        <Col>
-          <CategoryCard />
-        </Col>
-        <Col>
-          <CategoryCard />
-        </Col>
-
-      </Row>
+    <div className={styles.container}>
+      {
+            isLoading ? <span className={styles.loading}><Preloader /></span> : 
+            isError ? <span className={styles.noData}>No data</span> : 
+            <Row colGutter={10} rowGutter={10}>
+                {
+                    categoriesData && categoriesData?.map((item, index) => (
+                        <Col key={index} grid={{ xxlg: 3, xlg: 4, lg: 6, span: 6, sm: 12 }} >
+                            <div className={styles.products}>
+                                <ProductCard data={item}/>
+                            </div>
+                        </Col>
+                    ))
+                }
+            </Row>
+        }
     </div>
   )
 }

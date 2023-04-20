@@ -1,0 +1,15 @@
+@use '../../../styles/global.scss' as *;
+
+.categories {
+    display: flex;
+    flex-direction: column;
+}
+.category {
+    padding: 10px;
+    color: rgb(110, 109, 109);
+}
+
+.plus {
+    float: right;
+    font-weight: 700;
+}
