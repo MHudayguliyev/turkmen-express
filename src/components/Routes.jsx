@@ -9,6 +9,8 @@ import CategoriesSideBar from "./SideBars/CategoriesSideBar/CategoriesSideBar.js
 import ProductsTags from "./SideBars/ProductTags/ProductsTags.jsx";
 import FilterPrice from "./SideBars/FilterPrice/FilterPrice.jsx";
 import FilterBy from "./SideBars/FilterBy/FilterBy.jsx";
+import Basket from '../pages/Basket/Basket.jsx'
+import BasketSidebar from "./SideBars/BasketSidebar/BasketSidebar.jsx";
 
 const routes = [
     {
@@ -60,9 +62,18 @@ const routes = [
             <Products />
           </Layout>
         )
-      }
+      },
     ]
- }
+ 
+ },
+ {
+  path: 'basket',
+  element: (
+     <Layout sidebars={[{component: <BasketSidebar />}]}>
+       <Basket />
+     </Layout>
+  )
+}
  ]
 
 export default routes

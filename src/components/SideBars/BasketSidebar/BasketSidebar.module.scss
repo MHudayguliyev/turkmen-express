@@ -1,0 +1,30 @@
+.basketSidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.sidebarInfo {
+    display: flex;
+    justify-content: space-between;
+}
+.netTotal {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+}
+
+.sale {
+    color: var(--main-color-red)
+}
+.total {
+    padding-top: 20px;
+}
+.btn {
+    background-color: #069448;;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}

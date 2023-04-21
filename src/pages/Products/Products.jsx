@@ -9,6 +9,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 
 ///// styles
 import styles from './Products.module.scss'
+import BasketCard from '../../components/BasketCard/BasketCard.jsx'
 
 const Products = () => {
     const [productList, setProductList] = useState([])
@@ -31,23 +32,26 @@ const Products = () => {
 
 
   return (
-    <div className={styles.container}>
-        {
-            isLoading ? <span className={styles.loading}><Preloader /></span> : 
-            isError ? <span className={styles.noData}>No data</span> : 
-            <Row colGutter={10} rowGutter={10}>
-                {
-                    productList && productList?.map((item, index) => (
-                        <Col key={index} grid={{ xxlg: 3, xlg: 4, lg: 6, span: 6, sm: 12 }} >
-                            <div className={styles.products}>
-                                <ProductCard data={item}/>
-                            </div>
-                        </Col>
-                    ))
-                }
-            </Row>
-        }
-    </div>
+      <>
+        <div className={styles.container}>
+            {
+                isLoading ? <span className={styles.loading}><Preloader /></span> : 
+                isError ? <span className={styles.noData}>No data</span> : 
+                <Row colGutter={10} rowGutter={10}>
+                    {
+                        productList && productList?.map((item, index) => (
+                            <Col key={index} grid={{ xxlg: 3, xlg: 4, lg: 6, span: 6, sm: 12 }} >
+                                <div className={styles.products}>
+                                    <ProductCard data={item}/>
+                                </div>
+                            </Col>
+                        ))
+                    }
+                </Row>
+            }
+        </div>
+        <BasketCard />
+      </>
   )
 }
 
